@@ -44,11 +44,6 @@ public class Materia {
         this.titular=titular;
     }
 
-    private Estudiante e1 = new Estudiante("Jose","Pekerman",222);
-    private Estudiante e2 = new Estudiante("Pepe","Argento",223);
-    private Estudiante e3 = new Estudiante("Homero","Simpson",224);
-    private Estudiante e4 = new Estudiante("Bart","Simpson", 225);
-    private Estudiante e5 = new Estudiante("Francia","Doggy",226);
-    private Estudiante e6 = new Estudiante("Fernando","Carlos",227);
+
 
 }
