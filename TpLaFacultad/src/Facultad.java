@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Facultad {
+public class Facultad implements Informacion{
     private String nombre;
     private List<Carrera>coleccionCarreras = new ArrayList<Carrera>();
 
@@ -41,7 +41,17 @@ public class Facultad {
     void eliminarEstudiante(Estudiante estudiante){
     }
 
+ @Override
+    public int verCantidad() {
+        int x =coleccionCarreras.size();
+        System.out.println(x);
+        return x;
+    }
 
+    @Override
+    public String listarContenidos() {
+        return null;
+    }
 
 
 }
