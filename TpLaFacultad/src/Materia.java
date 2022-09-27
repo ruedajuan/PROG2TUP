@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Materia {
+public class Materia implements Informacion{
     private String nombre;
     private Profesor titular;
     private List<Estudiante> coleccionEstudiantes= new ArrayList<Estudiante>();
@@ -43,7 +43,17 @@ public class Materia {
     public void modificarTitular(Profesor titular){
         this.titular=titular;
     }
+ @Override
+    public int verCantidad() {
+        int x =coleccionEstudiantes.size();
+        System.out.println(x);
+        return x;
+    }
 
+    @Override
+    public String listarContenidos() {
+        return null;
+    }
 
 
 }
