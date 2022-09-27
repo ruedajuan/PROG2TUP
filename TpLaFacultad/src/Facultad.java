@@ -40,12 +40,7 @@ public class Facultad {
     }
     void eliminarEstudiante(Estudiante estudiante){
     }
-    //Carreras
-    private Carrera tup = new Carrera();
-    private Carrera arquitectura = new Carrera();
-    private Carrera electromecanica = new Carrera();
-    private Carrera quimica = new Carrera();
-    private Carrera civil = new Carrera();
+
 
 
 
