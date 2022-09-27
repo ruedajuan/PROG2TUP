@@ -4,32 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Facultad unne = new Facultad();
-        //Agrego carreras a la unne
-        unne.agregarCarrera(unne.);
-        unne.agregarCarrera(unne.civil);
-        unne.agregarCarrera(unne.electromecanica);
-
-        Facultad utn = new Facultad();
-        //Agrego carreras a la utn
-        utn.agregarCarrera(utn.tup);
-        utn.agregarCarrera(utn.electromecanica);
-        utn.agregarCarrera(utn.quimica);
-        utn.agregarCarrera(utn.civil);
-        //Elimino una carrera que la utn no tiene
-
-        utn.civil.setNombre("Ingenieria Civil");
-        utn.eliminarCarrera("Ingenieria Civil");
-
-        //Agrego materias a una carrera
-
-        utn.tup.agregarMateria(utn.tup.laboratorio);
-        utn.tup.agregarMateria(utn.tup.matematica;
-
-
-
-
-        /*
+       
         //Facultad
         Facultad unne = new Facultad();
         Facultad utn = new Facultad();
@@ -38,6 +13,7 @@ public class Main {
         Carrera tup = new Carrera();
         Carrera arquitectura = new Carrera();
         Carrera electromecanica = new Carrera();
+        
         //Agregar carreras a la Facultad
 
         unne.agregarCarrera(arquitectura);
@@ -75,7 +51,7 @@ public class Main {
         laboratorio.agregarEstudiante(e4);
 
         // elimino un estudiante
-        laboratorio.eliminarEstudiante(e1); */
+        
 
 
 
