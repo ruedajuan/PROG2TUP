@@ -3,12 +3,12 @@ import java.util.List;
 
 public class Facultad implements Informacion{
     private String nombre;
-    private List<Carrera>coleccionCarreras = new ArrayList<Carrera>();
+    private List<Carrera>coleccionCarreras=new ArrayList<Carrera>() ;
 
     public Facultad(){
     }
 
-    public Facultad(String nombre,List coleccionCarreras) {
+    public Facultad(String nombre,List<Carrera> coleccionCarreras) {
         this.nombre=nombre;
         this.coleccionCarreras=coleccionCarreras;
     }
@@ -20,7 +20,7 @@ public class Facultad implements Informacion{
         this.nombre = nombre;
     }
 
-    public void setColeccionCarreras(List coleccionCarreras){
+    public void setColeccionCarreras(List<Carrera> coleccionCarreras){
         this.coleccionCarreras=coleccionCarreras;
     }
     public List getColeccionCarreras(){
@@ -30,21 +30,32 @@ public class Facultad implements Informacion{
     void agregarCarrera(Carrera carrera){
         coleccionCarreras.add(carrera);
     }
-    void eliminarCarrera(String nombreCarrera){
-        for (Carrera carre:coleccionCarreras){
-            if(carre.getNombre().equals(nombreCarrera)){
-                coleccionCarreras.remove(carre);
+    void eliminarCarrera(String carreraABorrar){
+      for(int i=0;i<coleccionCarreras.size();i++){
+          if(coleccionCarreras.get(i).getNombre().equals(carreraABorrar)){
+              coleccionCarreras.remove(i);
+          }
+      }
+    }
+
+    void eliminarEstudiante(Estudiante estudiante){
+
+        for(int i=0;i<coleccionCarreras.size();i++){
+            for(int j=0;j<coleccionCarreras.get(i).getColeccionMaterias().size();j++){
+                for(int k=0;k<coleccionCarreras.get(i).getColeccionMaterias().get(j).getColeccionEstudiantes().size();k++){
+                    if(coleccionCarreras.get(i).getColeccionMaterias().get(j).getColeccionEstudiantes().get(k).equals(estudiante)){
+                        coleccionCarreras.get(i).getColeccionMaterias().get(j).eliminarEstudiante(estudiante.getApellido());
+                    }
+                }
             }
         }
-
-    }
-    void eliminarEstudiante(Estudiante estudiante){
     }
 
- @Override
+
+    @Override
     public int verCantidad() {
         int x =coleccionCarreras.size();
-        System.out.println(x);
+        System.out.println("Carreras en "+ getNombre()+": "+x);
         return x;
     }
 
@@ -53,5 +64,12 @@ public class Facultad implements Informacion{
         return null;
     }
 
-
+    @Override
+    public String toString() {
+        return "Facultad{" +
+                "nombre='" + nombre + '\'' +
+                ", coleccionCarreras=" + coleccionCarreras +
+                '}';
+    }
 }
+
