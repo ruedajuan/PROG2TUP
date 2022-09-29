@@ -10,6 +10,31 @@ public class Profesor extends Persona{
 
 
     public void calcularSueldo(double basico, int antiguedad){
-        double Sueldo = antiguedad*(basico*0.1)+basico;
+        double sueldo = antiguedad*(basico*0.1)+basico;
+        System.out.println("El sueldo del profesor "+ getApellido()+" es: "+ sueldo);
+    }
+
+    public double getBasico() {
+        return basico;
+    }
+
+    public void setBasico(double basico) {
+        this.basico = basico;
+    }
+
+    public int getAntiguedad() {
+        return antiguedad;
+    }
+
+    public void setAntiguedad(int antiguedad) {
+        this.antiguedad = antiguedad;
+    }
+
+    @Override
+    public String toString() {
+        return "Profesor{" +
+                "basico=" + basico +
+                ", antiguedad=" + antiguedad +
+                '}';
     }
 }
