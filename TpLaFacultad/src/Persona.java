@@ -31,7 +31,14 @@ public abstract class Persona {
     public void setLegajo(int legajo) {
         this.legajo = legajo;
     }
-
+@Override
+    public String toString() {
+        return "Persona{" +
+                "nombre='" + nombre + '\'' +
+                ", apellido='" + apellido + '\'' +
+                ", legajo=" + legajo +
+                '}';
+    }
 
 
 }
