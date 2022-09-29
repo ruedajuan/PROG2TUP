@@ -3,5 +3,8 @@ public class Estudiante extends Persona{
         super(nombre,apellido,legajo);
 
     }
-
+    @Override
+    public String toString() {
+        return super.toString();
+    }
 }
