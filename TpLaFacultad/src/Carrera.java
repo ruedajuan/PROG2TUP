@@ -1,14 +1,15 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
-public class Carrera implements Informacion  {
+public class Carrera implements Informacion {
     private String nombre;
-    private List<Materia> coleccionMaterias = new ArrayList<Materia>();
+    private List<Materia> coleccionMaterias= new ArrayList<Materia>() ;
 
     public Carrera(){
 
     }
-    public Carrera(String nombre, List coleccionMaterias) {
+    public Carrera(String nombre, List<Materia> coleccionMaterias) {
         this.nombre = nombre;
         this.coleccionMaterias=coleccionMaterias;
     }
@@ -24,28 +25,39 @@ public class Carrera implements Informacion  {
     public void setColeccionMaterias(List<Materia> coleccionMaterias) {
         this.coleccionMaterias = coleccionMaterias;
     }
-    public List getColeccionMaterias(){
+    public List<Materia> getColeccionMaterias(){
         return coleccionMaterias;
     }
 
     public void agregarMateria(Materia materia){
         coleccionMaterias.add(materia);
     }
-    public void eliminarMateria(String nombreMateria){
-        coleccionMaterias.remove(nombreMateria);
-    }
-    public void encontrarMateria(String nombreMateria){
-        for (Materia mate:coleccionMaterias){
-            if (mate.getNombre().equals(nombreMateria)){
-                System.out.println("Materia encontrada en la coleccion");
+    public void eliminarMateria(String materiaABorrar){
+        for(int i=0;i<coleccionMaterias.size();i++){
+            if(coleccionMaterias.get(i).getNombre().equals(materiaABorrar)){
+                coleccionMaterias.remove(i);
             }
-            else System.out.println("Materia no encontrada");
         }
+
     }
-        @Override
+    public void encontrarMateria(String materiaAEncontrar){
+          for(int i=0;i<coleccionMaterias.size();i++){
+                if(coleccionMaterias.get(i).getNombre().equals(materiaAEncontrar)){
+                    System.out.println("Materia encontrada");
+                    System.out.println("¿Desea eliminarla? En caso afirmativo presione 1 ");
+                    Scanner s1 = new Scanner(System.in);
+                    int aux = s1.nextInt();
+                    if (aux==1)  coleccionMaterias.remove(i);
+                }
+            }
+
+        }
+
+
+    @Override
     public int verCantidad() {
         int x =coleccionMaterias.size();
-        System.out.println(x);
+        System.out.println("Materias en "+ getNombre()+": " +x);
         return x;
     }
 
@@ -54,4 +66,11 @@ public class Carrera implements Informacion  {
         return null;
     }
 
+    @Override
+    public String toString() {
+        return "Carrera{" +
+                "nombre='" + nombre + '\'' +
+                ", coleccionMaterias=" + coleccionMaterias +
+                '}';
+    }
 }
